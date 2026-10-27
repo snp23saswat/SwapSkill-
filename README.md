@@ -5,6 +5,8 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-brightgreen.svg)](https://www.mongodb.com/)
 [![License](https://img.shields.io/badge/License-ISC-purple.svg)]()
 
+video link-https://drive.google.com/drive/folders/1lPRkCn-SZ2_dTnLNwtnoV7Ho4fHAV_KU?usp=drive_link
+
 > A full-stack MERN platform empowering college students and peers to either **swap skills** directly (*"I teach you React, you teach me Guitar"*) or **teach for money** (*₹50–₹5,000/hr*) if they do not want to learn anything new.
 
 ---
@@ -317,7 +319,7 @@ The seed script (`npm run seed`) populates 14 realistic peer profiles designed t
    - `CLIENT_URL`: `https://your-skillswap-client.vercel.app`
 
 ### C. Frontend (Vercel)
-1. Import repository on [Vercel](https://vercel.com).
+1. Import repository on [netlify.com]
 2. Set Root Directory to `client`.
 3. Set Framework Preset to `Vite`.
 4. Environment Variables:
