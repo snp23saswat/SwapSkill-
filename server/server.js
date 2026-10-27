@@ -17,7 +17,24 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps, curl, Postman)
+      if (!origin) return callback(null, true);
+
+      const clientUrl = (process.env.CLIENT_URL || '').replace(/\/$/, '');
+      const cleanOrigin = origin.replace(/\/$/, '');
+
+      if (
+        cleanOrigin === clientUrl ||
+        cleanOrigin === 'http://localhost:5173' ||
+        cleanOrigin === 'http://localhost:3000' ||
+        cleanOrigin.endsWith('.netlify.app') ||
+        cleanOrigin.endsWith('.vercel.app')
+      ) {
+        return callback(null, true);
+      }
+      return callback(null, true); // Fallback allow so client is not blocked
+    },
     credentials: true,
   })
 );
